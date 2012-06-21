@@ -1,3 +1,6 @@
+"TODO: jshint
+"TODO:按指定字符对齐
+
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -45,12 +48,20 @@ set nu!
 "显示光标的坐标
 set ruler
 
+
+
+"自动缩进
+set noautoindent
+set cindent
+set smartindent
+
 "Tab键的宽度
 set shiftwidth=4
 set tabstop=4
 
+
 "Tab键插入四个空格,仅PHP
-autocmd FileType php set expandtab
+autocmd FileType php set shiftwidth=4 tabstop=4 expandtab softtabstop=4
 
 
 
@@ -67,8 +78,6 @@ if has('multi_byte_ime')
 endif
 
 
-"自动缩进
-set noautoindent
 
 "与Windows共享剪贴板
 set clipboard+=unnamed
@@ -92,7 +101,7 @@ call vundle#rc('$VIM/vimfiles/bundle/')
 Bundle 'gmarik/vundle'
 
 "代码补全
-Bundle 'neocomplcache'
+Bundle 'Shougo/neocomplcache'
 "代码段自动生成
 "Bundle 'snipMate'
 
@@ -111,6 +120,11 @@ Bundle 'Markdown-syntax'
 Bundle 'php.vim-html-enhanced'
 "HTML混排缩进改善
 Bundle "pangloss/vim-javascript"
+
+"按特殊字符对其， 需要修改源码以支持中文字符 https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
+Bundle 'Tabular'
+
+
 
 "Bundle 'jslint.vim'
 "即时预览CSS颜色
