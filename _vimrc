@@ -124,6 +124,8 @@ Bundle "pangloss/vim-javascript"
 "按特殊字符对其， 需要修改源码以支持中文字符 https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
 Bundle 'Tabular'
 
+"statuslines 增强
+Bundle 'scrooloose/vim-statline'
 
 
 "Bundle 'jslint.vim'
@@ -157,9 +159,6 @@ let g:neocomplcache_enable_at_startup = 1
 "inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 "inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 "inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
-
-
-
 
 "--------自定义快捷键
 
