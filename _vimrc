@@ -48,6 +48,8 @@ set nu!
 "显示光标的坐标
 set ruler
 
+"高亮整行
+set cursorline
 
 
 "自动缩进
