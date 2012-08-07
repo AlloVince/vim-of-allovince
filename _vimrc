@@ -129,8 +129,12 @@ Bundle 'Tabular'
 "statuslines 增强
 Bundle 'scrooloose/vim-statline'
 
+"文件管理器
+Bundle 'scrooloose/nerdtree'
+"autocmd vimenter * NERDTree
 
-"Bundle 'jslint.vim'
+"Bundle 'hallettj/jslint.vim'
+
 "即时预览CSS颜色
 "Bundle 'skammer/vim-css-color'
 "Bundle 'ZenCoding.vim'
@@ -167,3 +171,4 @@ let g:neocomplcache_enable_at_startup = 1
 "--- mm : 规范行首空格<cr>去除多余字符<cr>删除空白行<cr>规范行数
 nmap mm :%s/\r//g<cr>
 
+vmap ff <Esc>`>i')?><Esc>`<i<?=_('<Esc>
