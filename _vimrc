@@ -168,7 +168,20 @@ let g:neocomplcache_enable_at_startup = 1
 
 "--------自定义快捷键
 
-"--- mm : 规范行首空格<cr>去除多余字符<cr>删除空白行<cr>规范行数
+" 编辑模式进行光标移动
+inoremap <C-h> <left>
+inoremap <C-l> <right>
+inoremap <C-j> <C-o>gj
+inoremap <C-k> <C-o>gk
+
+
+"A-t : 打开NERDTree
+map <silent> <C-t>   <ESC>:NERDTree<CR>
+" 以打开NERDTree时的目录为工作目录
+let NERDTreeChDirMode=1
+
+"mm : 规范行首空格<cr>去除多余字符<cr>删除空白行<cr>规范行数
 nmap mm :%s/\r//g<cr>
 
-vmap ff <Esc>`>i')?><Esc>`<i<?=_('<Esc>
+"ff : 前后补全
+vmap ff <Esc>`>i')?><Esc>`<i<?=$this->_('<Esc>
