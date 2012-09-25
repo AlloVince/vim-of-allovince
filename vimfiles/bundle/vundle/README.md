@@ -2,7 +2,7 @@
 
 [Vundle] is short for **V**imb**undle** and is a [Vim] plugin manager.
 
-![Vundle-installer](https://lh3.googleusercontent.com/-4EnLqLpEZlk/TlqXWpgWxOI/AAAAAAAAHRw/oBAl6s1hj7U/vundle-install2.png)
+![Vundle-installer](http://25.media.tumblr.com/tumblr_m8m96w06G81r39828o1_1280.png)
 
 ## Quick start
 
@@ -90,11 +90,7 @@ see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 
 ## People Using Vundle
 
-   * [gmarik's vimrc](https://github.com/gmarik/vimfiles/blob/1f4f26d42f54443f1158e0009746a56b9a28b053/vimrc#L136)
-   * [mutewinter's Vim Config of Champions](https://github.com/mutewinter/dot_vim)
-   * [vimified - Ultimate, kick-ass VIM configuration on top of Vundle](https://github.com/zaiste/vimified)
-
-   If you have an interesting example, feel free to send a pull request with link to your config. Thx!
+see [Examples](/gmarik/vundle/wiki/Examples)
 
 ## FAQ
 
@@ -102,12 +98,7 @@ see [wiki](/gmarik/vundle/wiki)
 
 ## Contributors
 
-* [redlinesoftware](http://redlinesoftware.com) - for lending me 24" monitor!
-* [Marc Jeanson](https://github.com/marcjeanson) - vim dude I always bug for help...;)
-* [Brad Anderson](http://github.com/eco) (windows support)
-* [Ryan W](http://github.com/rygwdn)
-* [termac](http://github.com/termac)
-* and others
+  see [vundle contributors](https://github.com/gmarik/vundle/graphs/contributors)
 
 *Thank you!*
 
