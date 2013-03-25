@@ -104,7 +104,7 @@ Bundle 'gmarik/vundle'
 
 "代码补全
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neosnippet'
 "代码段自动生成
 "Bundle 'snipMate'
 
@@ -118,8 +118,9 @@ Bundle 'JavaScript-syntax'
 Bundle 'jQuery'
 Bundle 'othree/html5.vim'
 Bundle 'groenewege/vim-less'
-Bundle 'Markdown'
-Bundle 'Markdown-syntax'
+"Bundle 'Markdown'
+"Bundle 'Markdown-syntax'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'php.vim-html-enhanced'
 "HTML混排缩进改善
 Bundle "pangloss/vim-javascript"
@@ -182,6 +183,9 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" vim markdown
+let g:vim_markdown_folding_disabled=1
 
 
 "--------自定义快捷键
