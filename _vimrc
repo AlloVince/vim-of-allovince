@@ -61,7 +61,9 @@ set smartindent
 set shiftwidth=4
 set tabstop=4
 
-
+"使用4个空格代替Tab
+set expandtab
+set softtabstop=4
 "Tab键插入四个空格,仅PHP
 autocmd FileType php set shiftwidth=4 tabstop=4 expandtab softtabstop=4
 
@@ -91,7 +93,9 @@ autocmd! bufwritepost _vimrc source $VIM/_vimrc
 
 
 "配色方案
-colorscheme rainbow_fruit
+syntax enable
+set background=dark
+colorscheme solarized
 
 
 "##########插件管理 开始#############
@@ -104,9 +108,12 @@ Bundle 'gmarik/vundle'
 
 "代码补全
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
+"Bundle 'Shougo/neosnippet'
 "代码段自动生成
 "Bundle 'snipMate'
+
+"快速查找
+Bundle 'kien/ctrlp.vim'
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -135,6 +142,16 @@ Bundle 'scrooloose/vim-statline'
 Bundle 'scrooloose/nerdtree'
 "autocmd vimenter * NERDTree
 
+"在()、""、甚至HTML标签之间快速跳转；
+Bundle 'matchit.zip'
+"显示行末的空格；
+Bundle 'ShowTrailingWhitespace'
+"JS代码格式化插件；
+Bundle '_jsbeautify'
+
+Bundle 'stephpy/vim-php-cs-fixer'
+
+
 "Bundle 'hallettj/jslint.vim'
 
 "即时预览CSS颜色
@@ -143,7 +160,11 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'The-NERD-tree'
 "Bundle 'SuperTab'
 
+"语法检查
+"Bundle 'scrooloose/syntastic'
 
+"颜色管理
+Bundle 'altercation/vim-colors-solarized'
 "激活插件与文件类型的依赖关系
 filetype plugin indent on
 "##########插件管理 结束#############
@@ -177,6 +198,20 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
 
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+"if has('conceal')
+"  set conceallevel=2 concealcursor=i
+"endif
+
+
 autocmd FileType php,phtml setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -187,8 +222,31 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " vim markdown
 let g:vim_markdown_folding_disabled=1
 
+" ctrlp
+noremap <C-W><C-U> :CtrlPMRU<CR>
+nnoremap <C-W>u :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+
 
 "--------自定义快捷键
+
+"PHP code fix
+"let g:php_cs_fixer_path = "D:\xampp\php\php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_level = "all"                  " which level ?
+"let g:php_cs_fixer_config = "default"             " configuration
+"let g:php_cs_fixer_php_path = "php"               " Path to PHP
+"let g:php_cs_fixer_fixers_list = ""               " List of fixers
+"let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+"let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+"let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
 
 " 编辑模式进行光标移动
 inoremap <C-h> <left>
