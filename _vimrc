@@ -127,7 +127,7 @@ Bundle 'othree/html5.vim'
 Bundle 'groenewege/vim-less'
 "Bundle 'Markdown'
 "Bundle 'Markdown-syntax'
-Bundle 'plasticboy/vim-markdown'
+"Bundle 'plasticboy/vim-markdown'
 Bundle 'php.vim-html-enhanced'
 "HTML混排缩进改善
 Bundle "pangloss/vim-javascript"
@@ -150,7 +150,17 @@ Bundle 'ShowTrailingWhitespace'
 Bundle '_jsbeautify'
 
 Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'jcf/vim-latex'
 
+Bundle 'thinca/vim-quickrun'
+Bundle 'mattn/webapi-vim'
+Bundle 'tyru/open-browser.vim'
+Bundle 'superbrothers/vim-quickrun-markdown-gfm'
+
+"python 
+Bundle 'klen/python-mode'
+"代码折叠起始的层数
+set foldlevelstart=10
 
 "Bundle 'hallettj/jslint.vim'
 
@@ -235,6 +245,15 @@ let g:ctrlp_follow_symlinks=1
 
 
 
+let g:quickrun_config = {
+\   'markdown': {
+\     'type': 'markdown/gfm',
+\     'outputter': 'browser'
+\   }
+\ }
+
+
+
 "--------自定义快捷键
 
 "PHP code fix
@@ -266,3 +285,6 @@ nmap mm :%s/\r//g<cr>
 "ff : 前后补全
 "vmap ff <Esc>`>i')?><Esc>`<i<?=$this->_('<Esc>
 vmap ff "zdi<?=$this->_('<C-R>z');?><ESC>
+
+
+
