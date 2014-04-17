@@ -1,3 +1,17 @@
+let g:iswindows = 0
+let g:islinux = 0
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    let g:iswindows = 1
+else
+    let g:islinux = 1
+endif
+
+if has("gui_running")
+    let g:isGUI = 1
+else
+    let g:isGUI = 0
+endif
+
 "TODO: jshint
 "TODO:按指定字符对齐
 
@@ -17,11 +31,14 @@ set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 "语言设置
 set langmenu=zh_CN.UTF-8
 language message zh_CN.UTF-8
+
+if g:iswindows
+set guifont=Monaco:h9
+endif
+
 "set guifont=NSimSun:h10
 
-set guifont=Monaco:h9
-set gfw=YaHei\ Consolas\ Hybrid:h9
-
+"set gfw=YaHei\ Consolas\ Hybrid:h9
 "set guifont=Consolas:h12
 "set guifont=YaHei\ Consolas\ Hybrid:h12
 "set guifont=Yahei\ Mono:h12
@@ -34,7 +51,7 @@ source $VIMRUNTIME/menu.vim
 set nobackup
 
 "搜索忽略大小写
-set ignorecase 
+set ignorecase
 
 "搜索逐字符高亮
 set incsearch
@@ -43,7 +60,7 @@ set incsearch
 set gdefault
 
 "始终显示行号
-set nu!
+set number
 
 "显示光标的坐标
 set ruler
@@ -88,14 +105,24 @@ set clipboard+=unnamed
 
 
 "编辑vimrc之后，重新加载
+if g:iswindows
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
-
+else
+endif
 
 
 "配色方案
 syntax enable
 set background=dark
+if g:iswindows
 colorscheme solarized
+else
+    if g:isGUI
+        colorscheme solarized
+    else
+        colorscheme torte
+    endif
+endif
 
 
 "##########插件管理 开始#############
