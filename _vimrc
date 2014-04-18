@@ -315,7 +315,7 @@ nmap mm :%s/\r//g<cr>
 
 "ff : Ç°ºó²¹È«
 "vmap ff <Esc>`>i')?><Esc>`<i<?=$this->_('<Esc>
-vmap ff "zdi<?=$this->_('<C-R>z');?><ESC>
+vmap ff "zdi<?=$this->tag->_('<C-R>z');?><ESC>
 
 
 
