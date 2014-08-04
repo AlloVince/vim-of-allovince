@@ -309,6 +309,8 @@ let NERDTreeChDirMode=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 "自动开启Nerdtree
 autocmd vimenter * NERDTree
+"切换Nerdtree焦点到文件编辑
+autocmd VimEnter * wincmd p
 
 "mm : 规范行首空格<cr>去除多余字符<cr>删除空白行<cr>规范行数
 nmap mm :%s/\r//g<cr>
