@@ -36,6 +36,13 @@ if g:iswindows
 set guifont=Monaco:h9
 endif
 
+"更改临时文件生成位置
+if g:iswindows
+set directory=$HOME
+else 
+set directory=~/tmp,/tmp
+endif
+
 "set guifont=NSimSun:h10
 
 "set gfw=YaHei\ Consolas\ Hybrid:h9
@@ -155,6 +162,7 @@ Bundle 'groenewege/vim-less'
 "Bundle 'Markdown'
 "Bundle 'Markdown-syntax'
 "Bundle 'plasticboy/vim-markdown'
+Bundle 'StanAngeloff/php.vim'
 Bundle 'php.vim-html-enhanced'
 "HTML混排缩进改善
 Bundle "pangloss/vim-javascript"
