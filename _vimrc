@@ -175,6 +175,8 @@ Bundle 'scrooloose/vim-statline'
 
 "文件管理器
 Bundle 'scrooloose/nerdtree'
+"Nerdtree 增强
+Bundle 'jistr/vim-nerdtree-tabs'
 "autocmd vimenter * NERDTree
 
 "在()、""、甚至HTML标签之间快速跳转；
